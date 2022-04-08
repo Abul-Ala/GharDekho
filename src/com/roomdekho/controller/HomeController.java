@@ -161,7 +161,7 @@ public class HomeController {
 	
 	  public String forgetPasswod(HttpServletRequest req) throws ClassNotFoundException, SQLException
 	  {
-    	  System.out.println("forgetfassword invoked");
+    	   System.out.println("forgetfassword invoked");
 		   String email=req.getParameter("email");
 		   String password=req.getParameter("password");
 		   String newpassword=req.getParameter("newpassword");
@@ -195,7 +195,7 @@ public class HomeController {
 	    	
 	   
 		
-		return"forgetPassword";
+		return"login";
 	}
       
       
@@ -232,33 +232,80 @@ public class HomeController {
   		
   		return "signupsuccess";
   	}
-      
-      @PostMapping("/postProperties")
-      public String postProperties(HttpServletRequest req , UserFile userFile) throws SQLException
+      @GetMapping("/postProperties")
+      public String postProperties(HttpServletRequest req ) throws SQLException
       {
-    	 
-    	  
-    	 
+    	String name= req.getParameter("name");
+    	String email=  req.getParameter("email");
+    	String number=  req.getParameter("number");
+    	
+    	String PropertyType=  req.getParameter("PropType");
+    	String NoOfRooms=  req.getParameter("Rooms");
+    	String NoOfBathrooms=  req.getParameter("BathRooms");
+    	String OtherRooms=  req.getParameter("ExtraRoom");
+    	String FurnishingCondition=  req.getParameter("FurnishingCondition");
+    	String avalability=  req.getParameter("Avalability");
+    	String WillingToRent=  req.getParameter("WillingToRent");  
+    	String City=  req.getParameter("City");
+    	String Appartment=  req.getParameter("Appartment");
+    	String HouseNo=  req.getParameter("HouseNo");
+    	String rent=  req.getParameter("rent");
+    	
+    	System.out.println(HouseNo);
+    	System.out.println(email);
+    
+    	
+    	
+    	Connection con=jdbcTamplate.getDataSource().getConnection();	
+    	String query2 = "insert into userInfo(PropertyType,NoOfRooms,NoOfBathrooms,OtherRooms,FurnishingCondition,avalability,WillingToRent,city,Appartment,HouseNo,rent,name,email,number) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	    PreparedStatement stmt1 = con.prepareStatement(query2);
+	  	
+	    stmt1.setString(1,PropertyType);
+	    stmt1.setString(2,NoOfRooms);
+	    stmt1.setString(3,NoOfBathrooms);
+	    stmt1.setString(4,OtherRooms);
+	    stmt1.setString(5,FurnishingCondition);
+	    stmt1.setString(6,avalability);
+	    stmt1.setString(7,WillingToRent);
+	    stmt1.setString(8,City);
+	    stmt1.setString(9,Appartment);
+	    stmt1.setString(10,HouseNo);
+	    stmt1.setString(11, rent);
+	    stmt1.setString(12,name );
+	    stmt1.setString(13, email);
+	    stmt1.setString(14, number);
+	    
+	    
+	    
+        stmt1.executeUpdate();
+       
+
+    	 req.setAttribute("email", email);
+    	  return"Photos";
+      }
+      
+      @PostMapping("/uploadPhotos")
+      public String postProperties(HttpServletRequest req , UserFile userFile) throws SQLException
+      { 
+         
     	  List<String> filePath=uploadFileOnServer(userFile);
     	  for(String x:filePath)
     		  System.out.println(x);
     	  
     	      String email=req.getParameter("email");
-    	      String city=req.getParameter("city");
-    	      String rent=req.getParameter("rent");
-    	      
-    	      System.out.println(city);
-    	    
+    	     
+    	   
     	       Connection con1=jdbcTamplate.getDataSource().getConnection();	
       	       Statement	stm1=con1.createStatement();    	       
       	       for(String img: filePath){
-      	       String query1="insert into images(id,image,city,rent) values((select id from signup where email='"+email+"'),'"+img+"','"+city+"','"+rent+"')";
+      	       String query1="insert into images(email,photo) values('"+email+"','"+img+"')";
+      	       	
       	       stm1.executeUpdate(query1);
       	       }
       	       
       	   Connection con=jdbcTamplate.getDataSource().getConnection();	
   	       Statement smt =con.createStatement();
-  		   String query="select * from images ";
+  		   String query="select * from userInfo";
   	       ResultSet rs= smt.executeQuery(query);
   	       ArrayList<String> l= new ArrayList<String>();
   	       if(rs.next())
@@ -273,7 +320,7 @@ public class HomeController {
   	       
   	       }
     	  
-    	return"post_properties";  
+    	return"Photos";  
       }
 
      
@@ -304,7 +351,7 @@ public class HomeController {
   			if(userfilename!=null && userfilename.length()>0) {
   				String filepath = null ;
   				try {
-  					filepath =  directory.getCanonicalPath()+"\\"+ userfilename ;    //  */ directory.getCanonicalPath()+\"\\\"+userfilename ;
+  					filepath =directory.getCanonicalPath()+"\\"+ userfilename ;   //  */ directory.getCanonicalPath()+\"\\\"+userfilename ;
   					filepath=filepath.replace('\\' , '/');
   					BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filepath)); 
   					bos.write(filedata.getBytes());
@@ -327,37 +374,34 @@ public class HomeController {
 	   
     	System.out.println(city);
     	 
-   	   Connection con=jdbcTamplate.getDataSource().getConnection();	
+   	       Connection con=jdbcTamplate.getDataSource().getConnection();	
 	       Statement smt =con.createStatement();
-		   String query="select * from images where city='"+city+"' ";
+		   String query="select * from images inner join userinfo on userinfo.email=images.email where userInfo.city='"+city+"' ";
 	       ResultSet rs= smt.executeQuery(query);
-	      /* 
-	       ArrayList<String> l= new ArrayList<String>();
-	       if(rs.next())
-	       {   
-	    	   while(rs.next())
-	    	   {
-	    		   l.add(rs.getString("image"));   
-	    	   }
-	        req.setAttribute("img", l);
-	       }*/
-	       
-	       
+	  
+	   
 		    ArrayList<Map<String, String>> l = new ArrayList<Map<String,String>>(); 
 		  
 		    while(rs.next())
 		   {
 			   Map<String ,String> m=new HashMap<String ,String>();
-			   m.put(("image"), rs.getString("image"));
+			   m.put(("image"), rs.getString("photo"));
 			   m.put(("rent"), rs.getString("rent"));
+			   m.put("Appartment", rs.getString("Appartment"));
+			   m.put("WillingToRent", rs.getString("WillingToRent"));
+			   m.put("number", rs.getString("number"));
+			   m.put("HouseNo", rs.getString("HouseNo"));
+			   m.put("NoOfRooms", rs.getString("NoOfRooms"));
 		   
 			   l.add(m);
 		   }
+		  
 		    
 		    req.setAttribute("userInfo", l);
+		    req.setAttribute("city", city);
 	       
     	
-    	return"owner_properties";
+    	return "City1";
     }
 	
 }

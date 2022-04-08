@@ -5,6 +5,21 @@ import org.springframework.web.multipart.MultipartFile;
 public class UserFile {
 	
 	String name ;
+	String city;
+	String email;
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	MultipartFile multipartfile[] ;
 	
 		

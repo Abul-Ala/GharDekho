@@ -1,32 +1,33 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive House Rent Website</title>
+    <title>RoomDekho</title>
     <!-- LInk To CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"  type="text/css" href="style.css">
     <!-- Box Icons -->
-    <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  
 </head>
 <body>
     <!-- Navbar -->
     <header>
         <div class="nav container">
             <!-- Logo -->
-            <a href="#" class="logo"><i class='bx bx-home'></i>RoomDekho</a>
+            <a href="index.html" class="logo"><i class='bx bx-home'></i>RoomDekho</a>
             <!-- Menu Icon -->
             <input type="checkbox" name="" id="menu">
-            <label for="menu" <i class='bx bx-menu' id="menu-icon"></i></label>
+            <label for="menu" ><i class='bx bx-menu' id="menu-icon"></i></label>
             <!-- Nav List -->
             <ul class="navbar">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#sales">Sales</a></li>
-                <li><a href="#properties">Properties</a></li>
-                <li><a href="login.jsp">Post Properties</a></li>
+                <li><a href="#properties">post Properties</a></li>
             </ul>
             <!-- Log In Button -->
             <a href="login.jsp" class="btn">Log In</a>
@@ -37,13 +38,13 @@
     <section class="home container" id="home">
         <div class="home-text">
             <h1>Find Your Next <br>Perfect Place To <br>Live.</h1>
-            <a href="sign-up.html" class="btn">Sign Up</a>
+            <a href="sign-up.jsp" class="btn">Sign Up</a>
         </div>
     </section>
     <!-- About -->
     <section class="about container" id="about">
         <div class="about-img">
-            <img src="static/img/about.jpg" alt="">
+            <img src="static/image/about.jpg" alt="">
         </div>
         <div class="about-text">
             <span>About Us</span>
@@ -85,85 +86,91 @@
         <div class="properties-container container">
             <!-- Box 1 -->
             <div class="box">
-                <a href="#"><img src="static/img/jaipur.jpg"></a>
+                <img src="static/image/p1.jpg" alt="">
+                <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">
-                        <h3>Jaipur</h3>
-                        <p>Rajasthan</p>
+                        <h3>jaipur</h3>
+                        <p>Rajesthan</p>
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span>5</span></i>
+                        <i class='bx bx-bath' ><span>2</span></i>
                     </div>
                 </div>
             </div>
             <!-- Box 2 -->
             <div class="box">
-                <a href="#"><img src="static/img/Banglore.jpg"></a>
+                <img src="static/image/p2.jpg" alt="">
+                <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">
-                        <h3>Bangalore</h3>
-                        <p>Karnatka</p>
+                        <h3>The Palace</h3>
+                        <p>London, UK</p>
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span>5</span></i>
+                        <i class='bx bx-bath' ><span>2</span></i>
                     </div>
                 </div>
             </div>
             <!-- Box 3 -->
             <div class="box">
-                <a href="#"><img src="static/img/mumbai.jpg"></a>
+                <img src="static/image/p3.jpg" alt="">
+                <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">
-                        <h3>Mumbai</h3>
-                        <p>Maharashtra</p>
+                        <h3>The Palace</h3>
+                        <p>London, UK</p>
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span>5</span></i>
+                        <i class='bx bx-bath' ><span>2</span></i>
                     </div>
                 </div>
             </div>
             <!-- Box 4 -->
             <div class="box">
-                <a href="#"><img src="static/img/Chandigarh.jpg"></a>
+                <img src="static/image/p4.jpg" alt="">
+                <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">
-                        <h3>Chandigarh</h3>
-                        <p>Punjab</p>
+                        <h3>The Palace</h3>
+                        <p>London, UK</p>
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span>5</span></i>
+                        <i class='bx bx-bath' ><span>2</span></i>
                     </div>
                 </div>
             </div>
             <!-- Box 5 -->
             <div class="box">
-                <a href="#"><img src="static/img/delhi.jpg"></a>
+                <img src="static/image/p5.jpg" alt="">
+                <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">
-                        <h3>Delhi</h3>
-                        <p>Delhi</p>
+                        <h3>The Palace</h3>
+                        <p>London, UK</p>
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home'><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span>5</span></i>
+                        <i class='bx bx-bath' ><span>2</span></i>
                     </div>
                 </div>
             </div>
             <!-- Box 6 -->
             <div class="box">
-                <a href="#"><img src="static/img/gurugram.jpg"></a>
+                <img src="static/image/p6.jpg" alt="">
+                <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">
-                        <h3>Gurugram</h3>
-                        <p>Haryana</p>
+                        <h3>The Palace</h3>
+                        <p>London, UK</p>
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span>5</span></i>
+                        <i class='bx bx-bath' ><span>2</span></i>
                     </div>
                 </div>
             </div>
@@ -180,7 +187,7 @@
     <!-- Footer -->
     <section class="footer">
         <div class="footer-container container">
-            <h2>RoomDekho</h2>
+            <h2>R. State</h2>
             <div class="footer-box">
                 <h3>Quick Links</h3>
                 <a href="#">Agency</a>
@@ -189,14 +196,14 @@
             </div>
             <div class="footer-box">
                 <h3>Locations</h3>
-                <a href="#">Jaipur</a>
-                <a href="#">Mumbai</a>
-                <a href="#">Delhi</a>
+                <a href="#">Birmingham</a>
+                <a href="#">London</a>
+                <a href="#">New York</a>
             </div>
             <div class="footer-box">
                 <h3>Contact</h3>
-                <a href="tel:8306334469">Call Us</a>
-                <a href="mailto:RoomDekho@gamil.com">Mail us</a>
+                <a href="#">+44 (0)800 123 4567</a>
+                <a href="#">yourmail@gmail.com</a>
                 <div class="social">
                     <a href="#"><i class='bx bxl-facebook' ></i></a>
                     <a href="#"><i class='bx bxl-twitter' ></i></a>
@@ -205,6 +212,11 @@
             </div>
         </div>
     </section>
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&#169; CarpoolVenom All Right Reserved</p>
+    </div>
+
     
 </body>
 </html>

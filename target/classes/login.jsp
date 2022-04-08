@@ -16,7 +16,7 @@
     <header>
         <div class="nav container">
             <!-- Logo -->
-            <a href="index.jsp" class="logo"><i class='bx bx-home'></i>RoomDekho</a>
+            <a href="index.html" class="logo"><i class='bx bx-home'></i>RoomDekho</a>
            
             <!-- Log In Button -->
             <a href="sign-up.jsp" class="btn">Sign Up</a>

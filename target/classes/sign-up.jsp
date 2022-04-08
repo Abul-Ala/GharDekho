@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Sign Up</title>
     <!-- LInk To CSS -->
     <link rel="stylesheet"  type="text/css" href="style.css">
     <!-- Box Icons -->
@@ -16,40 +17,44 @@
     <header>
         <div class="nav container">
             <!-- Logo -->
-            <a href="index.jsp" class="logo"><i class='bx bx-home'></i>RoomDekho</a>
+            <a href="index.jsp" class="logo"><i class='bx bx-home'></i>R State</a>
            
             <!-- Log In Button -->
-            <a href="sign-up.jsp" class="btn">Sign Up</a>
+            <a href="login.jsp" class="btn">Log In</a>
         </div>
 
     </header>
-    <!-- Log In -->
+    <!-- Sign Up -->
     <div class="login container">
         <div class="login-container">
-            <h2>Login To Continue</h2>
-            <p>Log in with your data that you entered <br>during your registration</p>
+            <h2>Welcome , Let's get started</h2>
+            <p>Already have account <a href="login.jsp">Log In</a></p>
             <!-- Login Form -->
-            <form action="/RoomDekho/login" method="post">
+            <form action="/RoomDekho/signup" method="post">
+                <span>Full Name</span>
+                <input type="text" name="name" id="" placeholder="Your Name" required>
                 <span>Enter your email address</span>
                 <input type="email" name="email" id="" placeholder="yourmail@gmail.com" required>
+                <span>Phone</span>
+                <input type="tel" name="number" id="" placeholder="Enter your number" required>
                 <span>Enter your password</span>
-                <input type="password" name="password" id="" placeholder=" Password" required>
-                <input type="submit" value="Log In" class="buttom">
-                <h3 > ${test }</h3>
-                <a href="forgetPassword.jsp">Forget Password?</a>
+                <input type="password" name="password" id="" placeholder="At least 8" required>
+                <input type="submit" value="Sign Up" class="buttom">
+                <h3>${ allReadyLogin}</h3>
+                <a href="login.jsp">Already have account</a>
             </form>
-            <a href="sign-up.jsp" class="btn">Sign up now</a>
+            <a href="login.jsp" class="btn">Log In</a>
         </div>
         <!-- Log In Image -->
         <div class="login-image">
-            <img src="static/image/login.png" alt="">
+            <img src="static/image/sign-up.png" alt="">
         </div>
     </div>
     
     <!-- Footer -->
     <section class="footer">
         <div class="footer-container container">
-            <h2>R. State</h2>
+            <h2>RoomDekho</h2>
             <div class="footer-box">
                 <h3>Quick Links</h3>
                 <a href="#">Agency</a>

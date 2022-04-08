@@ -29,8 +29,8 @@ background-color: white;
 
  <c:forEach var="user" items="${userInfo}">
   <div class="box">
-              <!-- <img src="<c:url value="${user.image}"></c:url>"> -->  
-                  <img src="static/image/p1.jpg" alt="">
+             <img src="${user.image}" alt="">
+              <!--      <img src="uploded_image_on_server/2020-06-13.png" alt=""> --> 
                 <h3>$12,999</h3>
                 <div class="content">
                     <div class="text">

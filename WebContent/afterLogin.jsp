@@ -115,7 +115,7 @@
                     <div >
                         <h3>Bangalore</h3 >
                         <p> Karnatka </p>
-                        <input type="hidden"  name="city" value="banglore">
+                        <input type="hidden"  name="city" value="bangalore">
                     </div>
                     <div class="icon">
                         <i class='bx bx-bed' ><span></span></i>

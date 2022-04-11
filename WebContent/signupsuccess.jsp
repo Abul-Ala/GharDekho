@@ -32,10 +32,11 @@
             <form action="otpVerification" method="post">
                 <span>Enter OTP Here</span>
                 <input type="text" name="otp" id="" placeholder="Enter Your Otp" required>
-                <input type = "hidden" name="email" value=  ${email}  >
+                <input type = "hidden" name="email" value=  ${email }  >
 				<input type="submit" value="Verify" class="buttom">
             </form>
         </div>
+        ${text }
         <!-- Log In Image -->
         <div class="login-image">
             <img src="img/login.png" alt="">

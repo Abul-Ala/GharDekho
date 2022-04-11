@@ -36,8 +36,8 @@
         <div class="Flex1">
       <div>
             <div class="Photo">
-                <a href="#"><img src="${user.image}"></a>
-                 <a href="#"><img src="uploded_image_on_server/img-2.jpg"></a>
+                <a href="#"><img src="${user.image}" alt="photo uplode in process" ></a>
+                
              </div>
                 <div class="Details1">
                          <div><h4>Appartment Name- ${user.Appartment }</h4></div>

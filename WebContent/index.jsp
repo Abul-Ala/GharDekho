@@ -84,90 +84,131 @@
         </div>
         <div class="properties-container container">
             <!-- Box 1 -->
+           <form action="showProperties">
             <div class="box">
-                <a href="#"><img src="static/img/jaipur.jpg"></a>
+               
+          <!--    <a href="showProperties"> <img src="static/image/p1.jpg" alt=""> </a>-->
+            <input style="height:200px; width:270px;" type="image" src="static/img/p1.jpg" id="img" alt="" >
+                
                 <div class="content">
-                    <div class="text">
-                        <h3>Jaipur</h3>
-                        <p>Rajasthan</p>
+                    <div >
+                        <h3>jaipur</h3 >
+                        <p> Rajesthan </p>
+                        <input type="hidden"  name="city" value="jaipur">
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span></span></i>
+                        <i class='bx bx-bath' ><span></span></i>
                     </div>
                 </div>
             </div>
+        
+            </form> 
             <!-- Box 2 -->
+            <form action="showProperties">
             <div class="box">
-                <a href="#"><img src="static/img/Banglore.jpg"></a>
+               
+          <!--    <a href="showProperties"> <img src="static/image/p1.jpg" alt=""> </a>-->
+            <input style="height:200px; width:270px;" type="image" src="static/img/Banglore.jpg" alt="" >
+               
                 <div class="content">
-                    <div class="text">
-                        <h3>Bangalore</h3>
-                        <p>Karnatka</p>
+                    <div >
+                        <h3>Bangalore</h3 >
+                        <p> Karnatka </p>
+                        <input type="hidden"  name="city" value="bangalore">
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span></span></i>
+                        <i class='bx bx-bath' ><span></span></i>
                     </div>
                 </div>
             </div>
+        
+            </form> 
             <!-- Box 3 -->
+             <form action="showProperties">
             <div class="box">
-                <a href="#"><img src="static/img/mumbai.jpg"></a>
+               
+          <!--    <a href="showProperties"> <img src="static/image/p1.jpg" alt=""> </a>-->
+            <input style="height:200px; width:270px;" type="image" src="static/img/mumbai.jpg" id="img" alt="" >
+               
                 <div class="content">
-                    <div class="text">
-                        <h3>Mumbai</h3>
-                        <p>Maharashtra</p>
+                    <div >
+                        <h3>Mumbai</h3 >
+                        <p> Maharashtra </p>
+                        <input type="hidden"  name="city" value="mumbai">
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span></span></i>
+                        <i class='bx bx-bath' ><span></span></i>
                     </div>
                 </div>
             </div>
+        
+            </form> 
             <!-- Box 4 -->
+             <form action="showProperties">
             <div class="box">
-                <a href="#"><img src="static/img/Chandigarh.jpg"></a>
+               
+          <!--    <a href="showProperties"> <img src="static/image/p1.jpg" alt=""> </a>-->
+            <input style="height:200px; width:270px;" type=image src="static/img/Chandigarh.jpg" id="img" alt="" >
+            
                 <div class="content">
-                    <div class="text">
-                        <h3>Chandigarh</h3>
-                        <p>Punjab</p>
+                    <div >
+                        <h3>Chandigarh</h3 >
+                        <p> Punjab </p>
+                        <input type="hidden"  name="city" value="Chandigarh">
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span></span></i>
+                        <i class='bx bx-bath' ><span></span></i>
                     </div>
                 </div>
             </div>
+        
+            </form> 
             <!-- Box 5 -->
+            <form action="showProperties">
             <div class="box">
-                <a href="#"><img src="static/img/delhi.jpg"></a>
+               
+          <!--    <a href="showProperties"> <img src="static/image/p1.jpg" alt=""> </a>-->
+            <input style="height:200px; width:270px;" type="image" src="static/img/delhi.jpg" id="img" alt="" >
+              
                 <div class="content">
-                    <div class="text">
-                        <h3>Delhi</h3>
-                        <p>Delhi</p>
+                    <div >
+                        <h3>Delhi</h3 >
+                        <p> Delhi</p>
+                        <input type="hidden"  name="city" value="Delhi">
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home'><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span></span></i>
+                        <i class='bx bx-bath' ><span></span></i>
                     </div>
                 </div>
             </div>
+        
+            </form> 
             <!-- Box 6 -->
+             <form action="showProperties">
             <div class="box">
-                <a href="#"><img src="static/img/gurugram.jpg"></a>
+               
+          <!--    <a href="showProperties"> <img src="static/image/p1.jpg" alt=""> </a>-->
+            <input style="height:200px; width:270px;" type="image" src="static/img/gurugram.jpg"id="img" alt="" >
+               
                 <div class="content">
-                    <div class="text">
-                        <h3>Gurugram</h3>
-                        <p>Haryana</p>
+                    <div >
+                        <h3>Gurugram</h3 >
+                        <p>Haryana </p>
+                        <input type="hidden"  name="city" value="Gurugram">
                     </div>
                     <div class="icon">
-                        <i class='bx bx-home' ><span>5</span></i>
-                      
+                        <i class='bx bx-bed' ><span></span></i>
+                        <i class='bx bx-bath' ><span></span></i>
                     </div>
                 </div>
             </div>
-        </div>
+        
+            </form> 
     </section>
     <!-- Newsletter -->
     <section class="newsletter container">

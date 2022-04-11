@@ -56,6 +56,7 @@ public class HomeController {
 		
 		if(rs.next())
 		{
+		
 			req.setAttribute("allReadyLogin", "you are all ready login");
 			return "sign-up";
 		}
@@ -222,7 +223,7 @@ public class HomeController {
   	    	    String query1="update signup set is_varify=1 where email='"+email+"'";
   	    	    stm1.executeUpdate(query1);
   	    	    req.setAttribute("userData", rs.getString("name"));
-  	    	     return"afterLogin";
+  	    	    return"afterLogin";
   	    	     
   	         }
   	        else
@@ -232,8 +233,8 @@ public class HomeController {
   		
   		return "signupsuccess";
   	}
-      @GetMapping("/postProperties")
-      public String postProperties(HttpServletRequest req ) throws SQLException
+      @PostMapping("/postProperties")
+      public String postProperties(HttpServletRequest req,  UserFile userFile) throws SQLException
       {
     	String name= req.getParameter("name");
     	String email=  req.getParameter("email");
@@ -253,11 +254,23 @@ public class HomeController {
     	
     	System.out.println(HouseNo);
     	System.out.println(email);
+    	
+    	
+
+  	  List<String> filePath=uploadFileOnServer(userFile);
+  	  for(String x:filePath)
+  		  System.out.println(x);
+  	     	    
+  	         String img="";
+    	       for(String image: filePath){
+    	         img = image.substring(29);
+    	       }
+    	
     
     	
     	
     	Connection con=jdbcTamplate.getDataSource().getConnection();	
-    	String query2 = "insert into userInfo(PropertyType,NoOfRooms,NoOfBathrooms,OtherRooms,FurnishingCondition,avalability,WillingToRent,city,Appartment,HouseNo,rent,name,email,number) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    	String query2 = "insert into userInfo(PropertyType,NoOfRooms,NoOfBathrooms,OtherRooms,FurnishingCondition,avalability,WillingToRent,city,Appartment,HouseNo,rent,name,email,number,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	    PreparedStatement stmt1 = con.prepareStatement(query2);
 	  	
 	    stmt1.setString(1,PropertyType);
@@ -274,63 +287,21 @@ public class HomeController {
 	    stmt1.setString(12,name );
 	    stmt1.setString(13, email);
 	    stmt1.setString(14, number);
-	    
-	    
-	    
+	    stmt1.setString(15, img);
         stmt1.executeUpdate();
        
 
-    	 req.setAttribute("email", email);
-    	  return"Photos";
+    	req.setAttribute("userData", name);
+    	return"afterLogin";
       }
-      
-      @PostMapping("/uploadPhotos")
-      public String postProperties(HttpServletRequest req , UserFile userFile) throws SQLException
-      { 
-         
-    	  List<String> filePath=uploadFileOnServer(userFile);
-    	  for(String x:filePath)
-    		  System.out.println(x);
-    	  
-    	      String email=req.getParameter("email");
-    	     
-    	   
-    	       Connection con1=jdbcTamplate.getDataSource().getConnection();	
-      	       Statement	stm1=con1.createStatement();    	       
-      	       for(String img: filePath){
-      	       String query1="insert into images(email,photo) values('"+email+"','"+img+"')";
-      	       	
-      	       stm1.executeUpdate(query1);
-      	       }
-      	       
-      	   Connection con=jdbcTamplate.getDataSource().getConnection();	
-  	       Statement smt =con.createStatement();
-  		   String query="select * from userInfo";
-  	       ResultSet rs= smt.executeQuery(query);
-  	       ArrayList<String> l= new ArrayList<String>();
-  	       if(rs.next())
-  	       {
-  	    	   
-  	    	   while(rs.next())
-  	    	   {
-  	    		   l.add(rs.getString("image"));
-  	    		   
-  	    	   }
-  	        req.setAttribute("text", "your image is successfuly uploaded");
-  	       
-  	       }
-    	  
-    	return"Photos";  
-      }
-
-     
-	
+    
 
 	private List<String> uploadFileOnServer(UserFile userfile ) {
   		// it upload file on server and return the path of the uploaded file
   		// it takes file from UserFile class
   		
   		String rootdirectory ="F://Java//RoomDekho//WebContent//uploded_image_on_server";  //we can also append userid in the path
+  		//String rootdirectory="RoomDekho//WebContent//uploded_image_on_server";
   		File directory = new File(rootdirectory);
   		
   		if(!directory.exists()) {
@@ -376,7 +347,7 @@ public class HomeController {
     	 
    	       Connection con=jdbcTamplate.getDataSource().getConnection();	
 	       Statement smt =con.createStatement();
-		   String query="select * from images inner join userinfo on userinfo.email=images.email where userInfo.city='"+city+"' ";
+		   String query="select * from  userinfo where city='"+city+"' ";
 	       ResultSet rs= smt.executeQuery(query);
 	  
 	   
@@ -385,7 +356,7 @@ public class HomeController {
 		    while(rs.next())
 		   {
 			   Map<String ,String> m=new HashMap<String ,String>();
-			   m.put(("image"), rs.getString("photo"));
+			   m.put(("image"), rs.getString("image"));
 			   m.put(("rent"), rs.getString("rent"));
 			   m.put("Appartment", rs.getString("Appartment"));
 			   m.put("WillingToRent", rs.getString("WillingToRent"));

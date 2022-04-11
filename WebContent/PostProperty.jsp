@@ -26,7 +26,7 @@
             <h2>Welcome , Let's get started</h2>
             <h3>Add Basic Details</h3>
             <!-- Login Form -->
-            <form action="postProperties" onsubmit="true">
+            <form action="postProperties" onsubmit="true" method="post" enctype="multipart/form-data">
                 <label>Owner Full Name</label>
                 <input type="text" name="name" id="" placeholder="Your Name" required>
                 <label>Enter your email address</label>
@@ -93,8 +93,12 @@
                 <input type="text" name="HouseNo" id="" placeholder="House-NO">
                  <span>Enter Rent Amount</span>
                 <input type="text" name="rent" id="" placeholder=" Rent">
-               <button type="submit" class="btn">Continue</button>
-            </form>
+                 <label><h3>Provide Photos</h3></label>
+                <input type="file" name="multipartfile" class="Type">
+              
+                <button type="submit" class="btn">Continue</button>
+                <input type="hidden" name="email" value= ${email } >
+               
         </div>
         <!-- Log In Image -->
         <div class="login-image">
